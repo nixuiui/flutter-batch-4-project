@@ -1,5 +1,7 @@
 import 'package:flutter_batch_4_project/data/local_storage/auth_local_storage.dart';
 import 'package:flutter_batch_4_project/data/local_storage/theme_local_storage.dart';
+import 'package:flutter_batch_4_project/data/remote_data/auth_remote_data.dart';
+import 'package:flutter_batch_4_project/data/remote_data/network_service/network_service.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
@@ -25,5 +27,11 @@ void localStorageInjector() {
 }
 
 void networkInjector() {
-  // TODO: Create Singleton Remote Data
+  final networkService = NetworkService(
+    getIt.get<AuthLocalStorage>()
+  );
+  getIt.registerSingleton(networkService);
+  getIt.registerSingleton<AuthRemoteData>(AuthRemoteDataImpl(
+    getIt.get<NetworkService>()
+  ));
 }
