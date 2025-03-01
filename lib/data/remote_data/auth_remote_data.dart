@@ -28,8 +28,8 @@ class AuthRemoteDataImpl implements AuthRemoteData {
     final response = await networkService.post(
       url: "/api/auth/login",
       data: {
-        "email": "admin@gmail.com",
-        "password": "123456"
+        "email": email,
+        "password": password
       }
     );
 

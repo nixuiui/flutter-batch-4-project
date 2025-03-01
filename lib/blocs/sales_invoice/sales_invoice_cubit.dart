@@ -16,7 +16,7 @@ class SalesInvoiceCubit extends Cubit<SalesInvoiceState> {
     try {
       final response = await salesRemoteData.getSalesInvoices(
         page: 1,
-        size: 20
+        size: 1000
       );
       emit(state.copyWith(
         loading: false,
