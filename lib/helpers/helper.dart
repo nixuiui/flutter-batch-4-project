@@ -12,7 +12,6 @@ String formatRupiah(double? amount) {
     decimalDigits: 0
   );
   
-  
   if((amount ?? 0) >= 0) {
     final formatted = formatter.format(amount ?? 0);
     return formatted;
