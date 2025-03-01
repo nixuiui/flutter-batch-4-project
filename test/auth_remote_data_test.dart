@@ -33,7 +33,7 @@ void main() {
             "name": "Admin",
             "email": "admin@gmail.com",
           },
-          "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL25naW5mb2luLm15LmlkL3B1YmxpYy9hcGkvYXV0aC9sb2dpbiIsImlhdCI6MTczMzA1MjQ4NiwiZXhwIjoxNzMzMDU2MDg2LCJuYmYiOjE3MzMwNTI0ODYsImp0aSI6Inh0SG5CSDlSb0paNjJtSUgiLCJzdWIiOiIxIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.lsKDP492-9lM4XEX5SxlMnVHdorTOK3aH4-qiixMuYY",
+          "access_token": "access_token",
         }
       };
 
@@ -50,7 +50,7 @@ void main() {
 
       final result = await authRemoteData.postLogin(email, password);
 
-      expect(result.accessToken, "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL25naW5mb2luLm15LmlkL3B1YmxpYy9hcGkvYXV0aC9sb2dpbiIsImlhdCI6MTczMzA1MjQ4NiwiZXhwIjoxNzMzMDU2MDg2LCJuYmYiOjE3MzMwNTI0ODYsImp0aSI6Inh0SG5CSDlSb0paNjJtSUgiLCJzdWIiOiIxIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.lsKDP492-9lM4XEX5SxlMnVHdorTOK3aH4-qiixMuYY");
+      expect(result.accessToken, "access_token");
       expect(result.user?.name, "Admin");
       expect(result.user?.email, "admin@gmail.com");
       verify(mockNetworkService.post(
